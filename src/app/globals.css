@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * This file is part of the cretech repo.
+ *
+ * (c) a4smanjorg5
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+
+  input {
+    background-color: #374151;
+  }
+}
+
+@keyframes dotload {
+  0% { content: ' . ' }
+  50% { content: ' . . ' }
+  100% { content: ' . . .' }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.add-loading:after {
+  animation-name: dotload;
+  animation-duration: 2s ;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  content: '.';
+}
+
+.scan-region-highlight {
+  border-radius: 30px;
+  outline: rgba(0, 0, 0, .25) solid 50vmax;
+}
