@@ -12,7 +12,8 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
-      Under construction...
+      <Link href="buzzonk" className="block underline">Online Multiplayer Buzzer</Link>
+      <Link href="convoe" className="block underline">Online Votes Counter</Link>
     </main>
   )
 }

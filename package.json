@@ -22,10 +22,14 @@
   "devDependencies": {
     "@headlessui/react": "^1.7.15",
     "autoprefixer": "10.4.14",
+    "base32": "^0.0.7",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "github-fork-ribbon-css": "^0.2.3",
+    "jsqr-es6": "^1.4.0-1",
+    "peerjs": "^1.4.7",
     "postcss": "8.4.25",
+    "qrcode": "^1.5.3",
     "tailwindcss": "3.3.2"
   }
 }
