@@ -14,7 +14,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Nominee from './nominee'
 import SecondaryButton from '@/components/secondary-button'
-import SnowflakeId from './snowflake'
+import SnowflakeId from '@/convoe/snowflake'
 
 export default function Create() {
   const { current: self } = useRef({}),

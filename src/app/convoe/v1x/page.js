@@ -1,5 +1,4 @@
-import { redirect } from 'next/navigation'
-import { headers } from 'next/headers'
+import QRScan from './qrscan'
 
 /**
  * This file is part of the cretech repo.
@@ -11,10 +10,14 @@ import { headers } from 'next/headers'
  */
 
 export const metadata = {
-  title: 'Votes Counter',
-  description: 'Count the election',
+  title: 'Election Scanner',
+  description: 'Scan to count election',
 }
 
 export default function Convoe() {
-  redirect(headers().get('x-invoke-path') + '/v1x')
+  return (
+    <main className="flex min-h-screen flex-col items-center gap-4 p-8 sm:p-24">
+      <QRScan />
+    </main>
+  )
 }
