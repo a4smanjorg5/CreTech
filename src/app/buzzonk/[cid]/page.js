@@ -10,11 +10,10 @@
  */
 
 import ActionMessage from '@/components/action-message';
-import Button from '@/components/button';
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import ErrorPage from 'next/error'
+import ArrowRightSolid from '@/components/arrow-right-solid';
 
 const connData = (type, p) => {
   const result = connData.default[type]
@@ -168,12 +167,18 @@ export default function Page({ params: { cid } }) {
   return (
     host !== null ? <main className={(called ? 'bg-cyan-600 ' : '') + 'flex min-h-screen flex-col items-center p-8 sm:p-24'}>
       {host ? <>
-        <ActionMessage on={flashDN}>Selamat datang {dn}</ActionMessage>
+        <ActionMessage on={flashDN}>Welcome {dn}</ActionMessage>
         {sessionStorage.getItem('dn') === null && <form onSubmit={e => { e.preventDefault(); submitted() }} onChange={selectDN}>
           <label>
-            <input type="text" name="dn" value={dn} required />
+            <span className='block mb-2 cursor-pointer '>Enter your name</span>
+            <input type="text" name="dn" value={dn} required className='p-2 outline-none rounded-lg'/>
           </label>
-          <div className="mt-2"><Button>Submit</Button></div>
+          <div className='flex justify-end items-center'>
+          <button className='text-white w-10 h-10 transition  ease-in-out flex justify-center items-center mt-3 rounded-full delay-450 bg-blue-500 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500 duration-300' type="submit">
+            <ArrowRightSolid size="40%" color="white" />
+          </button>
+          </div>
+
         </form>}
         {sessionStorage.getItem('dn') && <svg xmlns="http://www.w3.org/2000/svg" role="button" className="max-w-[--buzz-max-w] mt-8 sm:mt-0" onClick={toggleBuzz} viewBox="0 0 200 200">
           <circle fill={buzz > 0 ? 'green' : (buzz < 0 ? 'yellow' : 'red')} stroke="black" strokeWidth="2" cx="100" cy="100" r="98" />
