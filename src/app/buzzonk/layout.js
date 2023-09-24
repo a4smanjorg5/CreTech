@@ -1,7 +1,4 @@
-export const metadata = {
-  title: 'Host The Buzz',
-  description: 'The host of buzzer',
-}
+import NoSleep from './no-sleep'
 
 /**
  * This file is part of the cretech repo.
@@ -12,6 +9,11 @@ export const metadata = {
  * file that was distributed with this source code.
  */
 
+export const metadata = {
+  title: 'Host The Buzz',
+  description: 'The host of buzzer',
+}
+
 export default function HostLayout({ children }) {
-  return children
+  return <NoSleep>{children}</NoSleep>
 }
