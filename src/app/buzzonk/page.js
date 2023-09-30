@@ -11,7 +11,6 @@
 
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import ActionMessage from '@/components/action-message';
 import Checkbox from '@/components/checkbox';
 import SecondaryButton from '@/components/secondary-button'
 
@@ -249,16 +248,16 @@ export default function Host() {
           })}
         </div>
         </div>}
-        <div className="grid auto-cols-max gap-4">
+        <div className="grid auto-cols-max gap-2">
           <div className="col-span-3">settings</div>
 
-          <div>After buzz</div>
-          <div>:</div>
-          <div><input type="number" name="cbt" min="1" value={cbt} onChange={settChange} /></div>
+          <label htmlFor="setCBT">After buzz</label>
+          <span>:</span>
+          <div><input type="number" id="setCBT" name="cbt" min="1" value={cbt} onChange={settChange} /></div>
 
-          <div>Before buzz</div>
-          <div>:</div>
-          <div><input type="number" name="lto" min="1" value={lto} onChange={settChange} /></div>
+          <label htmlFor="setLTO">Before buzz</label>
+          <span>:</span>
+          <div><input type="number" id="setLTO" name="lto" min="1" value={lto} onChange={settChange} /></div>
         </div>
     </main>
   )
